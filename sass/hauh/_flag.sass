@@ -1,0 +1,29 @@
+.flag
+    display: table
+    width: 100%
+    border-spacing: 0
+
+    .flag-image,
+    .flag-body
+        display: table-cell
+        vertical-align: middle
+
+        .flag-top &
+            vertical-align: top
+
+        .flag-bottom &
+            vertical-align: bottom
+
+    .flag-image
+        width: 1px
+        padding-right: 1em
+
+        > img
+            max-width: none
+
+        .flag-reverse &
+            padding-right: 0
+            padding-left: 1em
+
+    .flag-body
+        width: auto
