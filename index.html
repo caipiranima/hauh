@@ -6,6 +6,8 @@
     <title>História Antes de Uma História</title>
 
     <link rel="stylesheet" href="css/hauh.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
 </head>
 
 <body>
@@ -20,48 +22,79 @@
             <label for="bmenub" class="burger pseudo button">&#8801;</label>
 
             <div class="menu">
-                <a href="/">Home</a>
-                <a href="#">Notícias</a>
-                <a href="#">História</a>
-                <a href="#">Processo</a>
-                <a href="#">Equipe</a>
-                <a href="#">Contato</a>
+                <a href="home" data-navigo id="homeMenuItem" class="menu-item-selected">Home</a>
+                <a href="depoimentos" data-navigo id="depoimentosMenuItem">Depoimentos</a>
+                <a href="historia" data-navigo id="historiaMenuItem">História</a>
+                <a href="processo" data-navigo id="processoMenuItem">Processo</a>
+                <a href="equipe" data-navigo id="equipeMenuItem">Equipe</a>
+                <a href="noticias" data-navigo id="noticiasMenuItem">Notícias</a>
+                <a href="contato" data-navigo id="contatoMenuItem">Contato</a>
             </div>
         </nav>
     </header>
 
-    <main>
-        <div class="hero">
-            <div class="hero-main">
-                <img class="movie-logo" src="img/titulo.png" alt="" />
-
-                <p>As aventuras do Doutor K estarão nos cinemas a partir de 3 de março! <a href="#">Confira os locais e horários de exibição</a></p>
-
-                <label for="modal-trailer" class="button button-watch-trailer">Assista ao trailer</label>
-
-                <div class="modal">
-                    <input id="modal-trailer" type="checkbox" />
-                    <label for="modal-trailer" class="overlay"></label>
-                    <article>
-                        <header>
-                            <h3>Trailer</h3>
-                            <label for="modal-trailer" class="close">&times;</label>
-                        </header>
-                        <section class="content">
-                            <div class="video-wrapper">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/7-aXEtwQmPU" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </section>
-                    </article>
-                </div>
-
-            </div>
-        </div>
-    </main>
+    <main></main>
 
     <footer>
         <img class="nca-logo" src="img/nca_logo.png" />
     </footer>
+
+    <script src="js/navigo.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        function navigate(page) {
+            var request = new XMLHttpRequest();
+            request.open('GET', '_'+ page +'.html', true);
+
+            request.onload = function() {
+                if (request.status >= 200 && request.status < 400) {
+                    // Success!
+                    var main = document.getElementsByTagName('main')[0];
+                    main.innerHTML = request.responseText;
+
+                    var selectedMenuItem = document.getElementsByClassName('menu-item-selected')[0]
+                    selectedMenuItem.className = ''
+                    var menuAnchor = document.querySelectorAll('a[href="'+ page +'"]')[0];
+                    menuAnchor.className = 'menu-item-selected'
+
+                } else {
+                    // We reached our target server, but it returned an error
+                }
+            };
+
+            request.onerror = function() {
+                // There was a connection error of some sort
+            };
+
+            request.send();
+        }
+
+        var router = new Navigo(null, true)
+
+        router
+            .on({
+                'depoimentos': function() {
+                    navigate('depoimentos')
+                },
+                'historia': function() {
+                    navigate('historia')
+                },
+                'processo': function() {
+                    navigate('processo')
+                },
+                'equipe': function() {
+                    navigate('equipe')
+                },
+                'noticias': function() {
+                    navigate('noticias')
+                },
+                'contato': function() {
+                    navigate('contato')
+                },
+                '/': function() {
+                    navigate('home')
+                }
+            }).resolve()
+    </script>
 </body>
 
 </html>

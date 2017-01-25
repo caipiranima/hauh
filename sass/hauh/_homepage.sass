@@ -1,13 +1,51 @@
+@font-face
+    font-family: 'FONTSPRING DEMO - Ophian'
+    src: url('../font/Fontspring-DEMO-Ophian-Regular.otf') format('opentype')
+    font-weight: normal
+    font-style: normal
+
+@font-face
+    font-family: 'FONTSPRING DEMO - Ophian'
+    src: url('../font/Fontspring-DEMO-Ophian-Bold.otf') format('opentype')
+    font-weight: bold
+    font-style: normal
+
+@font-face
+    font-family: 'FONTSPRING DEMO - Ophian'
+    src: url('../font/Fontspring-DEMO-Ophian-BoldItalic.otf') format('opentype')
+    font-weight: bold
+    font-style: italic
+
+@font-face
+    font-family: 'FONTSPRING DEMO - Ophian'
+    src: url('../font/Fontspring-DEMO-Ophian-Italic.otf') format('opentype')
+    font-weight: normal
+    font-style: italic
+
+html
+    background-image: url('../img/CenPl34.png'), url('../img/textura_papel.jpg')
+    overflow-y: scroll
+
+body
+    background-color: transparent
+    font-family: 'Work Sans'
+    font-size: 1.2em
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+    font-family: 'FONTSPRING DEMO - Ophian'
+
 .hero
-    background-image: url("../img/hp_bg.jpg")
-    background-repeat: no-repeat
-    background-position: center
 
     .hero-main
         max-width: 30em
         margin: auto
         position: absolute
-        top: 45%
+        top: 25%
         left: 50%
         margin-left: -15em
 
@@ -19,6 +57,12 @@
 
 .button-watch-trailer
     margin-top: 1em
+    padding: .6em 1.5em
+    font-size: 1.2em
+
+main > .content
+    max-width: 40em
+    margin: 5em auto
 
 .modal
 
@@ -37,4 +81,112 @@ footer
 
 .nca-logo
     padding: 0 .6em .4em .6em
-    max-width: 11em
+    max-width: 17em
+
+.img-folhas-home
+    padding-top: 1em
+    overflow: hidden
+
+.img-drka-home
+    margin-left: 4em
+
+// ***********
+// DEPOIMENTOS
+// ***********
+.quote-wrap
+    margin: 20px auto
+    padding: 20px 0
+    position: relative
+
+    p
+        margin: 0
+        padding: 0
+        font-family: 'FONTSPRING DEMO - Ophian'
+        font-size: 24px
+        color: #b4b4b4
+        font-weight: 400
+        line-height: 40px
+        font-style: italic
+        text-indent: 100px
+        position: relative
+
+        &:before
+            content: '\201C'
+            font-family: serif
+            font-style: normal
+            font-weight: 700
+            position: absolute
+            font-size: 175px
+            top: 0px
+            left: -105px
+            color: rgba(40, 150, 185, 1)
+            text-shadow: 7px 14px 10px rgba(0, 0, 0, 0.1)
+
+    blockquote
+        margin: 0
+        position: relative
+        background: #fff
+        padding: 30px
+        //border-radius: 5px
+        box-shadow: inset 0 2px 0 rgba(40, 150, 185, 1), -5px -4px 25px rgba(0, 0, 0, 0.3)
+
+        // &:after,
+        // &:before
+        //     top: 100%
+        //     border: solid transparent
+        //     content: " "
+        //     height: 0
+        //     width: 0
+        //     position: absolute
+        //     pointer-events: none
+        //
+        // &:after
+        //     border-top-color: #fff
+        //     border-width: 10px
+        //     left: 88%
+        //     margin-left: -10px
+        //
+        // &:before
+        //     border-top-color: rgba(0,0,0,0.01)
+        //     border-width: 11px
+        //     left: 88%
+        //     margin-left: -11px
+
+    .quote-author
+        font-family: 'Work Sans'
+        font-weight: 700
+        font-size: 18px
+        color: rgba(40, 150, 185, 1)
+        text-shadow: 0 1px 1px rgba(255,255,255,0.7)
+        text-align: right
+        padding: 20px 0
+
+        &:before
+            content: ""
+
+    .quote-author-details
+        font-family: 'Work Sans'
+        font-weight: 700
+        font-style: italic
+        color: #777
+        text-align: right
+        font-size: 0.7em
+        max-width: 50%
+        margin-left: 50%
+        margin-top: -26px
+
+// ********
+// HISTÓRIA
+// ********
+.letter-content
+    margin-top: 400px
+
+    h1
+        text-align: center
+
+.dr-ka-letter
+    position: absolute
+    max-width: 700px
+    top: 0
+    left: 50%
+    margin-left: -350px
