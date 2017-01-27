@@ -39,7 +39,7 @@
         <img class="nca-logo" src="img/nca_logo.png" />
     </footer>
 
-    <script src="js/navigo.min.js" charset="utf-8"></script>
+    <script src="js/navigo.js" charset="utf-8"></script>
     <script type="text/javascript">
         function navigate(page) {
             var request = new XMLHttpRequest();
@@ -68,7 +68,7 @@
             request.send();
         }
 
-        var router = new Navigo('https://kinetoskombi.github.io/hauh', true)
+        var router = new Navigo(null, true)
 
         router
             .on({
