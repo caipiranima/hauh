@@ -68,29 +68,29 @@
             request.send();
         }
 
-        var router = new Navigo('/hauh', true)
+        var router = new Navigo(null, true)
 
         router
             .on({
-                '/hauh/depoimentos': function() {
+                'depoimentos': function() {
                     navigate('depoimentos')
                 },
-                '/hauh/historia': function() {
+                'historia': function() {
                     navigate('historia')
                 },
-                '/hauh/processo': function() {
+                'processo': function() {
                     navigate('processo')
                 },
-                '/hauh/equipe': function() {
+                'equipe': function() {
                     navigate('equipe')
                 },
-                '/hauh/noticias': function() {
+                'noticias': function() {
                     navigate('noticias')
                 },
-                '/hauh/contato': function() {
+                'contato': function() {
                     navigate('contato')
                 },
-                '/hauh/': function() {
+                '*': function() {
                     navigate('home')
                 }
             }).resolve()
