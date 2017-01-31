@@ -23,8 +23,9 @@
 
             <div class="menu">
                 <a href="home" data-navigo id="homeMenuItem" class="menu-item-selected">Home</a>
-                <a href="depoimentos" data-navigo id="depoimentosMenuItem">Depoimentos</a>
                 <a href="historia" data-navigo id="historiaMenuItem">História</a>
+                <a href="depoimentos" data-navigo id="depoimentosMenuItem">Depoimentos</a>
+                <a href="carta" data-navigo id="cartaMenuItem">Carta</a>
                 <a href="processo" data-navigo id="processoMenuItem">Processo</a>
                 <a href="equipe" data-navigo id="equipeMenuItem">Equipe</a>
                 <a href="noticias" data-navigo id="noticiasMenuItem">Notícias</a>
@@ -72,11 +73,14 @@
 
         router
             .on({
+                'historia': function() {
+                    navigate('historia')
+                },
                 'depoimentos': function() {
                     navigate('depoimentos')
                 },
-                'historia': function() {
-                    navigate('historia')
+                'carta': function() {
+                    navigate('carta')
                 },
                 'processo': function() {
                     navigate('processo')
